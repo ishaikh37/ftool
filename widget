@@ -1,3 +1,6 @@
+// yourscript.js
+
+// Function to create and append the widget
 function createFinanceWidget() {
   var container = document.createElement('div');
   container.className = 'container widget-container';
@@ -31,8 +34,21 @@ function createFinanceWidget() {
     rightContent.className = 'right-content';
     rightContent.textContent = 'Get it on finance from £30 per month';
     
+    // var span = document.createElement('span');
+    // span.textContent = 'Instant decisions ~ 96% Approval Rate';
+
     var span = document.createElement('span');
-    span.textContent = 'Instant decisions ~ 96% Approval Rate';
+
+    var img2 = document.createElement('img');
+    img2.src = 'https://raw.githubusercontent.com/ishaikh37/ftool/main/info-icon.svg';
+    img2.alt = 'info-icon';
+
+    var text = document.createTextNode('Instant decisions ~ 96% Approval Rate');
+
+    // Append elements to create the structure
+    span.appendChild(img2);
+    span.appendChild(document.createTextNode(' ')); // Add space between image and text
+    span.appendChild(text);
 
     // Append elements to create the structure
     leftContent.appendChild(img);
@@ -57,6 +73,15 @@ function createFinanceWidget() {
     // Append Bootstrap JS script
     document.body.appendChild(bootstrapJs);
 
-  // Append the container to the 'financetool' div
-  document.getElementById('financetool').appendChild(container);
+  // Append the container to the 'widgetrender' div
+  document.getElementById('widgetrender').appendChild(container);
 }
+
+// Include Bootstrap JS
+var bootstrapJs = document.createElement('script');
+bootstrapJs.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js';
+bootstrapJs.integrity = 'sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL';
+bootstrapJs.crossOrigin = 'anonymous';
+
+// Append Bootstrap JS script
+document.body.appendChild(bootstrapJs);
