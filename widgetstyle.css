@@ -8,6 +8,12 @@
     z-index: 22;
 }
 
+.widget-iframe .modal-open-after .modal .modal-dialog{
+    top: 50%;
+    margin: 0px auto;
+    transform: translateY(-50%);
+}
+
 .widget-section{
     max-width: 390px;
 }
