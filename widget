@@ -66,6 +66,34 @@ function createFinanceWidget() {
   // Append Bootstrap JS script
   document.body.appendChild(bootstrapJs);
 
+container.addEventListener('click', function() {
+    // Create a new iframe element
+    var iframe = document.createElement('iframe');
+
+    // Set attributes for the iframe
+    iframe.src = 'https://astonishing-gumdrop-2e0416.netlify.app/';
+    iframe.style.width = '100%';
+    iframe.frameBorder = '0';
+    iframe.scrolling = 'no';
+    iframe.style.height = '100%';
+    iframe.style.position = 'fixed';
+    iframe.style.top = '0';
+    iframe.style.left = '0';
+    iframe.style.border = 'none';
+    iframe.classList.add('widget-iframe');
+
+    // Append the iframe to the body or any other container element
+    document.body.appendChild(iframe);
+
+    // Add a message event listener to close the iframe
+    window.addEventListener('message', function(event) {
+      if (event.data === 'closeIframe') {
+        iframe.style.display = 'none';
+        iframe.src = '';
+      }
+    });
+  });
+
  var fontPreconnect = document.createElement('link');
     fontPreconnect.rel = 'preconnect';
     fontPreconnect.href = 'https://fonts.googleapis.com';
