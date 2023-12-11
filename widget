@@ -4,33 +4,6 @@ function createFinanceWidget() {
   container.className = 'container widget-container';
   container.style.cursor = 'pointer';
 
-  var iframe = document.createElement('iframe');
-   iframe.src = 'https://astonishing-gumdrop-2e0416.netlify.app/';
-      iframe.style.width = '100%';
-      iframe.frameBorder = '0';
-      iframe.scrolling = 'no';
-       iframe.style.height = '100%';
-    iframe.style.position = 'fixed';
-    iframe.style.top = '0';
-    iframe.style.left = '0';
-    iframe.style.border = 'none';
-      iframe.classList.add('widget-iframe');
-
-      // Append the iframe to the body or any other container element
-      document.body.appendChild(iframe);
-      window.addEventListener('message', function(event) {
-        // Check if the message is from the iframe and close the iframe
-        if (event.data === 'closeIframe') {
-          iframe.style.display = 'none';
-            iframe.src = '';
-        }
-    });
-
-    container.appendChild(iframe);
-
-    // Append the container to the 'widgetrender' div
-    document.getElementById('widgetrender').appendChild(container);
-
   var row = document.createElement('div');
   row.className = 'row main-row';
 
