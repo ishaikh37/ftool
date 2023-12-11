@@ -2,6 +2,7 @@
 function createFinanceWidget() {
   var container = document.createElement('div');
   container.className = 'container widget-container';
+  container.style.cursor = 'pointer';
 
   var row = document.createElement('div');
   row.className = 'row main-row';
